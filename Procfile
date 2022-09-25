@@ -1,1 +1,1 @@
-web: gunicorn chetana_project.wsgi
+web gunicorn VR_Chest_Project.wsgi:application --logfile-
