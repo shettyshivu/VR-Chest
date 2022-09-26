@@ -1,24 +1,4 @@
-/*-----------------------------------------------------------------------------------
 
-    Template Name: Smart - Muultipurpose Landing Page Template
-    Template URL: uideck.com/templates/smart
-    Description: Smart - Muultipurpose Landing Page Template
-    Author: UIdeck
-    Author URL: https://uideck.com/
-    Support: https://uideck.com/support/
-    Version: 1.0
-
------------------------------------------------------------------------------------
-
-    CSS INDEX
-    ===================
-
-    01. Theme default CSS
-	02. Header
-    03. Hero
-	04. Footer
-
------------------------------------------------------------------------------------*/
 /*===========================
       1. COMMON css 
 ===========================*/
@@ -844,7 +824,7 @@ p {
                   .navbar-area .navbar .navbar-nav .nav-item .sub-menu li a i {
                     display: none; } }
               .navbar-area .navbar .navbar-nav .nav-item .sub-menu li a .sub-nav-toggler i {
-                display: inline-block; }
+                display: inline-block;}
               .navbar-area .navbar .navbar-nav .nav-item .sub-menu li a::after {
                 position: absolute;
                 content: '';
@@ -895,7 +875,7 @@ p {
                 opacity: 1; }
         .navbar-area .navbar .navbar-nav .nav-item:hover .sub-menu {
           opacity: 1;
-          visibility: visible; }
+          visibility: visible; color:black; }
         .navbar-area .navbar .navbar-nav .nav-item .sub-nav-toggler {
           display: none; }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
