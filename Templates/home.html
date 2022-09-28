@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
   <title>My Website</title>
   <!-- <style>
     body 
@@ -19,21 +24,21 @@
 <body>
   <!-- Header -->
   <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
+    <div class="headers containers">
+      <div class="nav-bars">
+        <div class="brands">
+      
             <h1>Logo</h1>
-          </a>
+          
         </div>
-        <div class="nav-list">
+        <div class="nav-lists">
           <div class="hamburger">
             <div class="bar"></div>
           </div>
           <ul>
             <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="Service">Services</a></li>
-            <li><a href="#projects" data-after="Projects">Doctors</a></li>
+            <li><a href="#about" data-after="about">About</a></li>
+            <li><a href="#facilities" data-after="facilities">Facilities</a></li>
             <li><a href="#about" data-after="About">About</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
           </ul>
@@ -46,71 +51,99 @@
 
   <!-- Hero Section  -->
   <section id="hero">
-    <div class="hero container">
+    <div class="hero containers">
       <div>
-        <h1 class="mainh1">VR Chest and Women Care</h1>
+        <h1 id="mainh1" style="text-align:center;">VR Chest and Women Care</h1>
        
       </div>
     </div>
   </section>
   <!-- End Hero Section  -->
 
-  <!-- Service Section -->
-  <section id="services">
-    <div class="services container">
+  <!-- About Section -->
+  <section id="about">
+    <div class="services containers">
       <div class="service-top">
-        <h1 class="section-title">Services</h1>
+        <br>
+        <h1 class="section-title">About</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas
           magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias
           voluptatum explicabo!</p>
       </div>
       <div class="service-bottom">
         <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-          <h2>ABC</h2>
+          <div class="icon"><img src="{% static 'img/advtech.webp' %}" /></div>
+          <h2>Advance Technology</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+            architecto placeat beatae tenetur officia</p>
         </div>
         <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-          <h2>ABC</h2>
+          <div class="icon"><img src="{% static 'img/comfplace.webp' %}" /></div>
+          <h2>Comfortable Place</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+            architecto placeat beatae tenetur officia</p>
         </div>
         <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-          <h2>ABC</h2>
+          <div class="icon"><img src="{% static 'img/friendlystaff.webp' %}" /></div>
+          <h2>Friendly Staffs</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+            architecto placeat beatae tenetur officia</p>
         </div>
         <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-          <h2>ABC</h2>
+          <div class="icon"><img src="{% static 'img/qualityequip.webp' %}" /></div>
+          <h2>Quality Equipments</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+            architecto placeat beatae tenetur officia</p>
         </div>
+      </div>
+      <div class="working">
+        <ul>
+          <li>&nbsp;Working Time : 9AM - 8PM</li> <br>
+          <li>Working Days : Mon - Sat</li>
+        </ul>
       </div>
     </div>
   </section>
-  <!-- End Service Section -->
+  <!-- End About Section -->
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="projects container">
-      <div class="projects-header">
-        <h1 class="section-title">Doctors</h1>
+  <!-- Facilities Section -->
+  <section id="facilities">
+    <br><br><br><br> <br>
+
+    <h1 class="section-title">Facilities</h1>
+    <br><br><br>
+    <!-- Button trigger modal1 -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  Treatment for Asthma and Allergy
+</button>
+
+<!-- Modal 2-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Treatment for Asthma and Allergy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
+</div>
   </section>
-  <!-- End Projects Section -->
+  <!-- End Facilities Section -->
 
 
 
   <!-- Contact Section -->
   <section id="contact">
-    <div class="contact container">
+    <div class="contact containers">
       <div>
-        <h1 class="section-title">Contact <span>info</span></h1>
+        <h1 class="section-title">Contact </h1>
       </div>
       <div class="contact-items">
         <div class="contact-item">
@@ -143,7 +176,7 @@
 
   <!-- Footer -->
   <section id="footer">
-    <div class="footer container">
+    <div class="footer containers">
       
       <p>Copyright © 2020 VR Chest and Women Care. All rights reserved</p>
     </div>
