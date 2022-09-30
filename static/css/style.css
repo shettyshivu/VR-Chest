@@ -41,10 +41,6 @@ p {
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
-.section-title span {
-	color: crimson;
-}
-
 .cta {
 	display: inline-block;
 	padding: 10px 30px;
@@ -67,9 +63,7 @@ p {
 	text-transform: uppercase;
 	color: white;
 }
-.brands h1 span {
-	color: crimson;
-}
+
 
 /* Header section */
 #header {
@@ -236,6 +230,11 @@ p {
 /* End Hero Section */
 
 /* About Section */
+#about .service-mainp 
+{
+	margin:0px;
+
+}
 #about .services {
 	flex-direction: column;
 	text-align: center;
@@ -358,17 +357,141 @@ p {
 	-webkit-transition: ease-out 0.4s;
 	-moz-transition: ease-out 0.4s;
 	transition: ease-out 0.4s;
-	box-shadow: inset 0 0 0 0 #41c2df;
+
 }
 .facparent div:hover
 {
-	box-shadow: inset 70vw 0 0 0 #41c2df;
+	background-color:  #41c2df;
 }
 .modalsdiv 
 {
+	font-size:18px;
+}
+
+/* End facilities section */
+
+/* Doctors Section */
+#doctors 
+{
 	font-size:16px;
 }
-/* End facilities section */
+#doctors .section-title
+{
+	margin-bottom:50px;
+}
+.col-centered {
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+  }
+.our-team {
+	padding: 20px 10px 30px;
+	margin-bottom: 30px;
+	background-color: #f9f9fa;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	border:2px solid #41c2df;
+	border-radius: 10px;
+	min-height: 370px;
+  }
+  
+  .our-team .picture {
+	display: inline-block;
+	height: 160px;
+	width: 160px;
+	margin-bottom: 20px;
+	z-index: 1;
+	position: relative;
+  }
+  
+  .our-team .picture::before {
+	content: "";
+	width: 100%;
+	height: 0;
+	border-radius: 50%;
+	background-color: #41c2df;
+	position: absolute;
+	bottom: 135%;
+	right: 0;
+	left: 0;
+	opacity: 0.9;
+	transform: scale(3);
+	transition: all 0.3s linear 0s;
+  }
+  
+  .our-team:hover .picture::before {
+	height: 100%;
+  }
+  
+  .our-team .picture::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #41c2df;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+  }
+  
+  .our-team .picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+	transform: scale(1);
+	transition: all 0.9s ease 0s;
+  }
+  
+  .our-team:hover .picture img {
+	box-shadow: 0 0 0 14px #f7f5ec;
+	transform: scale(0.7);
+  }
+  
+  .our-team .title {
+	display: block;
+	color: #4e5052;
+	text-transform: capitalize;
+  }
+  
+  .our-team .social {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #41c2df;
+	position: absolute;
+	bottom: -100px;
+	left: 0;
+	transition: all 0.5s ease 0s;
+  }
+  
+  .our-team:hover .social {
+	bottom: 0;
+  }
+  
+  .our-team .social li {
+	display: inline-block;
+  }
+  .our-team .social ul {
+	padding:10px;
+	
+  }
+  .our-team .social li a {
+	display: block;
+	padding: 10px;
+	font-size: 17px;
+	color: white;
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+  }
+  
+  .our-team .social li a:hover {
+	color: #1369ce;
+	background-color: #f7f5ec;
+  }
+  
+/* End of Doctors Section */
 
 /* About Section */
 #about .about {
