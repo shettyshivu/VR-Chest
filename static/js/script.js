@@ -23,3 +23,19 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+
+// Google Reviews
+
+jQuery(document).ready(function( $ ) {
+   $("#google-reviews").googlePlaces({
+        placeId: 'ChIJMZTIbdkXrjsRb5gaMwqs7QM' //Find placeID @: https://developers.google.com/places/place-id
+      , render: ['reviews']
+      , min_rating: 1
+      , max_rows:1000
+   });
+});
+
+
+  
+
+  

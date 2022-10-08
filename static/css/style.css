@@ -133,9 +133,12 @@ p {
 #header .nav-lists ul li:hover a::after {
 	transform: translate(-50%, -50%) scale(1);
 	letter-spacing: initial;
+	
 }
 #header .nav-lists ul li:hover a {
-	color: crimson;
+	width: 100%; 
+	left: 0; 
+	color: black;
 }
 #header .hamburger {
 	height: 60px;
@@ -200,6 +203,7 @@ p {
 	background-position: top center;
 	position: relative;
 	z-index: 1;
+	
 }
 #hero::after {
 	content: '';
@@ -310,8 +314,8 @@ p {
 	list-style: circle;
 	font-size: large;
 	padding:10px;
-	color:white;
-	background-color: #41c2df;
+	background-color: #d2eff0;
+	border:2px solid #41c2df;
 	padding: 50px;
 	border-radius:10px;
 	margin-top:40px;
@@ -365,7 +369,7 @@ p {
 }
 .modalsdiv 
 {
-	font-size:18px;
+	font-size:16px;
 }
 
 /* End facilities section */
@@ -493,61 +497,76 @@ p {
   
 /* End of Doctors Section */
 
-/* About Section */
-#about .about {
-	flex-direction: column-reverse;
-	text-align: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 20px;
+/* GallerySection */
+#Gallery 
+{
+	padding:15px;
+	background-color: #f9f9fa;
 }
-#about .col-left {
-	width: 250px;
-	height: 360px;
+/* End of Gallery Section */
+
+/* Reviews section */
+.review-div
+{
+	font-size:medium;
+	border:2px solid #41c2df;
+	padding:10px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	background-color: #f0f4f5;
 }
-#about .col-right {
-	width: 100%;
+.author
+{
+	text-align: right;
+	margin-top:10px;
+	font-weight: bold;
+	font-size:1.5rem;
 }
-#about .col-right h2 {
-	font-size: 1.8rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	margin-bottom: 10px;
+.facparent a 
+{
+	text-decoration: none;
+	color:black;
 }
-#about .col-right p {
-	margin-bottom: 20px;
+.facparent a:hover 
+{
+	color:black;
 }
-#about .col-right .cta {
-	color: black;
-	margin-bottom: 50px;
-	padding: 10px 20px;
-	font-size: 2rem;
+.review-link 
+{
+	font-size:2rem;
+	margin-bottom:30px;
+	border:2px solid #41c2df;
+	border-radius:5px;
+	width: 70vw;
+	text-align:center;
+	padding:15px;
+	cursor:pointer;
+	background-color:white;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
 }
-#about .col-left .about-img {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	border: 10px solid white;
-}
-#about .col-left .about-img::after {
-	content: '';
-	position: absolute;
-	left: -33px;
-	top: 19px;
-	height: 98%;
-	width: 98%;
-	border: 7px solid crimson;
-	z-index: -1;
-}
-/* End About Section */
+/* End of Reviews section */
 
 /* contact Section */
+#contact 
+{
+	background-color: #f9f9fa;
+}
+#contact h1 
+{
+margin-bottom: 30px;
+}
+#conh1 
+{
+	transform: translateY(-30px);
+}
 #contact .contact {
 	flex-direction: column;
 	max-width: 1200px;
-	margin: 0 auto;
 	width: 90%;
 }
+
 #contact .contact-items {
 	/* max-width: 400px; */
 	width: 100%;
@@ -584,6 +603,54 @@ p {
 	line-height: 2rem;
 	font-weight: 500;
 }
+.map iframe 
+{
+	margin-top:-50px;
+	margin-bottom:50px;
+}
+.msg 
+{
+	font-size:2rem;
+}
+.msg input
+{
+	height: 40px;
+	font-size:1.8rem;
+}
+.msg textarea
+{
+	font-size: 1.8rem;
+}
+.msg button 
+{
+	font-size:2rem;
+	padding:5px;
+	margin-bottom:50px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top:10px;
+	background-color: #41c2df;
+	border:2px solid #17a2c2;
+}
+@media screen and (max-width:768px)
+{
+.map iframe 
+{
+	margin-top:30px;
+}
+#conh1 
+{
+	transform: translateY(0px);
+	padding-top:60px;
+}
+#contact .contact-items 
+{
+	align-items: center;
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+}
+}
 /*End contact Section */
 
 /* Footer */
@@ -591,34 +658,17 @@ p {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 #footer .footer {
-	min-height: 200px;
+	min-height: 50px;
 	flex-direction: column;
-	padding-top: 50px;
-	padding-bottom: 10px;
+	padding: 10px;
 }
 #footer h2 {
+	text-align: center;
 	color: white;
 	font-weight: 500;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-#footer .social-icon {
-	display: flex;
-	margin-bottom: 30px;
-}
-#footer .social-item {
-	height: 50px;
-	width: 50px;
-	margin: 0 5px;
-}
-#footer .social-item img {
-	filter: grayscale(1);
-	transition: 0.3s ease filter;
-}
-#footer .social-item:hover img {
-	filter: grayscale(0);
+	
 }
 #footer p {
 	color: white;
@@ -682,27 +732,6 @@ p {
 		margin: 2.5%;
 	}
 	/* End Services Section */
-
-	/* Project */
-	#projects .project-item {
-		flex-direction: row;
-	}
-	#projects .project-item:nth-child(even) {
-		flex-direction: row-reverse;
-	}
-	#projects .project-item {
-		height: 400px;
-		margin: 0;
-		width: 100%;
-		border-radius: 0;
-	}
-	#projects .all-projects .project-info {
-		height: 100%;
-	}
-	#projects .all-projects .project-img {
-		height: 100%;
-	}
-	/* End Project */
 
 	/* About */
 	#about .about {
