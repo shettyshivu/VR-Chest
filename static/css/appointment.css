@@ -1,0 +1,14 @@
+form 
+{
+    margin-top:30px;
+}
+h1 
+{
+    font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	text-align: center;
+}

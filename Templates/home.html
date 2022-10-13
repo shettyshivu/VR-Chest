@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -74,7 +73,13 @@
     <div class="hero containers">
       <div>
         <h1 id="mainh1" style="text-align:center;">VR Chest and Women Care</h1>
-       
+       <div class="appoint">
+        <div>
+          <a href="{% url 'book-appointment' %}">
+          <button class="btn btn-primary">Book an appointment</button>
+          </a>
+        </div>
+       </div>
       </div>
     </div>
   </section>
@@ -457,20 +462,24 @@
     </div>
     <div class="msg container">
       <h1 class="section-title">Leave us a Note</h1>
-      <form class="row g-3 needs-validation" validate>
+   
+      <form class="row g-3 needs-validation" method="post" action="{% url 'saveFeedback' %}">
+        {% csrf_token %}
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
           <label for="validationCustom01" class="form-label">Name *</label>
-          <input type="text" class="form-control" id="validationCustom01" required>
+          <input type="text" class="form-control" id="validationCustom01" required name="name">
         </div>
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
-          <label for="validationCustomUsername" class="form-label">Email *</label>
+          <label for="validationCustomUsername" class="form-label" >Email *</label><br>
+          <span class="form-text">(We never spam your email)</span>
           <div class="input-group has-validation">
-            <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="email" required>
           </div>
+          
         </div>
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
-            <label for="exampleFormControlTextarea1" class="form-label">Messege *</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label" >Messege *</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
         </div>
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
           <button class="btn btn-primary" type="submit">Submit</button>
@@ -488,7 +497,42 @@
     </div>
   </section>
   <!-- End Footer -->
+
+  <!-- Pre loader -->
+  <div class = "loadelement"><span class = "spinner"> </span></div> 
+  <!-- End of Pre loader -->
+
+  <!-- Back to top -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a> 
+  <!-- End of Back to top -->
+
+
+  <!--  JS -->
   <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- Vendor -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+  integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+  integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+  crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>

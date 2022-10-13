@@ -33,7 +33,7 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: 300;
 	color: black;
 	margin-bottom: 10px;
@@ -229,6 +229,21 @@ p {
 	color: transparent;
 	animation: text_reveal 0.5s ease forwards;
 	animation-delay: 1s;
+}
+.appoint 
+{
+	display:flex;
+	justify-content: center;
+}
+.appoint div button
+{
+	font-size: 2rem;
+	margin-top: 50px;
+
+	border:2px solid #14cef8;
+	padding:10px;
+	border-radius: 15px;
+	
 }
 
 /* End Hero Section */
@@ -676,15 +691,94 @@ margin-bottom: 30px;
 }
 /* End Footer */
 
+/* Pre loader */ 
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	overflow: hidden;
+	background: rgb(36, 32, 46);
+  }
+  
+  #preloader:before {
+	content: "";
+	position: fixed;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	border: 6px solid rgb(36, 32, 46);
+	border-top-color: yellow;
+	border-bottom-color: red;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	-webkit-animation: animate-preloader 1s linear infinite;
+	animation: animate-preloader 1s linear infinite;
+  }
+  
+  @-webkit-keyframes animate-preloader {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes animate-preloader {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+
+  /* End of Pre loader */
+
+/* Back to top button */
+.back-to-top {
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+	right: 15px;
+	bottom: 15px;
+	z-index: 996;
+	background: rgb(36, 32, 46);
+	border: 2px solid yellow;
+	border-right: 2px solid red;
+	border-bottom: 2px solid red ;
+	width: 56px;
+	height: 56px;
+	border-radius: 50px;
+	transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+	font-size: 24px;
+	color: #fff;
+	line-height: 0;
+  }
+  
+  
+  .back-to-top.active {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+/* End of back to top button */
+
 /* Keyframes */
 @keyframes hamburger_puls {
 	0% {
 		opacity: 1;
-		transform: scale(1);
+		transform: scale(1.5);
 	}
 	100% {
 		opacity: 0;
-		transform: scale(1.4);
+		transform: scale(1);
 	}
 }
 @keyframes text_reveal_box {
