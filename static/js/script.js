@@ -24,35 +24,50 @@ menu_item.forEach((item) => {
 	});
 });
 
-// Google Reviews
 
-jQuery(document).ready(function( $ ) {
-   $("#google-reviews").googlePlaces({
-        placeId: 'ChIJMZTIbdkXrjsRb5gaMwqs7QM' //Find placeID @: https://developers.google.com/places/place-id
-      , render: ['reviews']
-      , min_rating: 1
-      , max_rows:1000
-   });
-});
 
-// Back to top button
 
-let backtotop = select(".back-to-top");
-if (backtotop) {
-  const toggleBacktotop = () => {
-	if (window.scrollY > 100) {
-	  backtotop.classList.add("active");
-	} else {
-	  backtotop.classList.remove("active");
+// slider
+
+var s= document.getElementById("slideImg");
+var images = new Array (
+	"https://cdn-endpoint-afib.azureedge.net/afibmatters/2020/01/iStock-171372917-1536x1024.jpg",
+	"https://www.babycenter.com/ims/2015/03/78751269_wide.jpg",
+	"https://wallpapercave.com/wp/wp6681966.png"
+);
+
+var len = images.length;
+var i =1;
+ function slider()
+ {
+	if(i>len-1)
+	{
+		i=0;
 	}
-  };
-  window.addEventListener("load", toggleBacktotop);
-  onscroll(document, toggleBacktotop);
-}
+	s.src=images[i];
+	i++;
+	setTimeout('slider()',3000)
+ }
 
-// Pre loader
-let loaderel = document.querySelector(".loadelement");
-window.addEventListener("load", function() {
-loaderel.style.display = "None";
-});
+
+ //counter
+ const counters = document.querySelectorAll(".counter");
+
+ counters.forEach((counter) => {
+   counter.innerText = "0";
+   const updateCounter = () => {
+	 const target = +counter.getAttribute("data-target");
+	 const count = +counter.innerText;
+	 const increment = target / 200;
+	 if (count < target) {
+	   counter.innerText = `${Math.ceil(count + increment)}`;
+	   setTimeout(updateCounter, 1);
+	 } else counter.innerText = target;
+   };
+   updateCounter();
+ });
+ 
+
+
+ 
   

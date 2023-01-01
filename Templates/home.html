@@ -13,11 +13,11 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- google Map -->
   <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm-YWWx-RNETQ6bX_LDm2eARqaxQ63g3Y&callback=initMap&v=weekly"
-  defer
-></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm-YWWx-RNETQ6bX_LDm2eARqaxQ63g3Y&callback=initMap&v=weekly" defer></script>
   <title>My Website</title>
   <!-- <style>
     body 
@@ -38,14 +38,14 @@
 
 </head>
 
-<body>
+<body onload="slider()">
   <!-- Header -->
   <section id="header">
     <div class="headers containers">
       <div class="nav-bars">
         <div class="brands">
       
-            <h1>Logo</h1>
+            <img src="{% static 'img/qualityequip.webp' %}" alt="">
           
         </div>
         <div class="nav-lists">
@@ -53,13 +53,11 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#about" data-after="about">About</a></li>
-            <li><a href="#facilities" data-after="facilities">Facilities</a></li>
-            <li><a href="#doctors" data-after="facilities">Doctors</a></li>
-            <li><a href="#Gallery" data-after="doctors">Gallery</a></li>
-            <li><a href="#reviews" data-after="doctors">Reviews</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
+            <li><a href="{% url 'book-appointment' %}">Appointment</a></li>
+            <li><a href="{% url 'facilities' %}" >Facilities</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'articles' %}">Articles</a></li>
+            <li><a href="#contact" data-after="facilities">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -70,355 +68,193 @@
 
   <!-- Hero Section  -->
   <section id="hero">
-    <div class="hero containers">
-      <div>
+    <!-- <div class="hero containers"> -->
+      <!-- <div>
         <h1 id="mainh1" style="text-align:center;">VR Chest and Women Care</h1>
-       <div class="appoint">
-        <div>
-          <a href="{% url 'book-appointment' %}">
-          <button class="btn btn-primary">Book an appointment</button>
-          </a>
+       
+      </div> -->
+      <div class="banner">
+        <div class="slider">
+          <img src="https://wallpapercave.com/wp/wp6681966.png" alt="" id="slideImg">
+          
         </div>
-       </div>
+       
+        <div class="overlay">
+         
+        </div>
+        <div class="content">
+          <h1>VR Chest and Women Care</h1>
+          <h3>Lorem ipsum dolor sit blanditiis quidem repudiandae doloremque, ratione impedit!</h3>
+          <div class="appoint">
+            <div>
+              <a href="{% url 'book-appointment' %}">
+              <button class="btn btn-primary">Book an appointment</button>
+              </a>
+              <br>
+              <a href="">
+              <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 080 - 1234567</button>
+              </a>
+            </div>
+           </div>
+           
+        </div>
       </div>
-    </div>
+    <!-- </div> -->
   </section>
   <!-- End Hero Section  -->
 
   <!-- About Section -->
   <section id="about">
-    <div class="services containers">
-      <div class="service-top">
-        <br>
-        <h1 class="section-title">About</h1>
-        <p class="service-mainp">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas
-          magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias
-          voluptatum explicabo!</p>
-      </div>
-      <div class="service-bottom">
-        <div class="service-item">
-          <div class="icon"><img src="{% static 'img/advtech.webp' %}" /></div>
-          <h2>Advance Technology</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia</p>
-        </div>
-        <div class="service-item">
-          <div class="icon"><img src="{% static 'img/comfplace.webp' %}" /></div>
-          <h2>Comfortable Place</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia</p>
-        </div>
-        <div class="service-item">
-          <div class="icon"><img src="{% static 'img/friendlystaff.webp' %}" /></div>
-          <h2>Friendly Staffs</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia</p>
-        </div>
-        <div class="service-item">
-          <div class="icon"><img src="{% static 'img/qualityequip.webp' %}" /></div>
-          <h2>Quality Equipments</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia</p>
-        </div>
-      </div>
-      <div class="working">
-        <ul>
-          <li>&nbsp;Working Time : 9AM - 8PM</li> <br>
-          <li>Working Days : Mon - Sat</li>
-        </ul>
-      </div>
+  <h1 class="sec-title" id="title"><span>ABOUT US</span></h1>
+  <div class="container mainparent">
+  <div class="parent1 col-12">
+    <div class="p1 col-sm-12 col-md-4">
+      <img src="{% static 'img/hero.png' %}" alt="">
     </div>
+   
+    <div class="p2  col-sm-12 col-md-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Veniam amet autem aliquid sit in, eveniet veritatis molestiae 
+        cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Veniam amet autem aliquid sit in, eveniet veritatis molestiae 
+        cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+    </div>
+  </div>
+  <div class="parent2 col-12">
+    <div class="p1  col-sm-12 col-md-4">
+      <img src="{% static 'img/gyn.jpg' %}" alt="">
+    </div>
+    <div class="p2  col-sm-12 col-md-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Veniam amet autem aliquid sit in, eveniet veritatis molestiae 
+        cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Veniam amet autem aliquid sit in, eveniet veritatis molestiae 
+        cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div class="numbers ">
+  <div class=" number col-3">
+    <span>1000+</span><br>
+    <span>Satisfied Clients</span>
+  </div>
+  <div class="number col-3">
+    <span>10+</span><br>
+    <span>Years of Experience</span>
+  </div>
+  <div class=" number col-3">
+    <span>15+</span><br>
+    <span>Awards and Recognitions</span>
+  </div>
+</div>
+</div>
   </section>
   <!-- End About Section -->
 
   <!-- Facilities Section -->
-  <section id="facilities">
-    <br><br><br>
-
-    <h1 class="section-title">Facilities</h1>
-
-
-      <div class="facparent">
-        <div data-bs-toggle="modal" data-bs-target="#modal1"> Treatment for Asthma and Allergy </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal2"> Treatment for Interventional Pulmonology  </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal3"> Treatment for Infectious diseases </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal4"> Treatment for Pulmonology diseases </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal5"> Treatment for Obstetrics </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal6"> Treatment for Gynaecology </div>
-        <div data-bs-toggle="modal" data-bs-target="#modal7"> Procedures carried out </div>
-      </div>
-      <br><br>
-      <div class="modalsdiv">
-        <!-- modal 1 -->
-        <div class="modal fade" id="modal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-              xyz
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 2 -->
-        <div class="modal fade" id="modal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                dfd
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 3 -->
-        <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ddd
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 4 -->
-        <div class="modal fade" id="modal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                fff
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 5 -->
-        <div class="modal fade" id="modal5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ggg
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 6 -->
-        <div class="modal fade" id="modal6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                hhh
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal 7 -->
-        <div class="modal fade" id="modal7" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title" id="staticBackdropLabel">Modal title</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ttt
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  </section>
+  
   <!-- End Facilities Section -->
 
   <!-- Doctors Section -->
   <section id="doctors">
     <br><br><br>
-    <h1 class="section-title">Doctors</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-centered">
-        <div class="our-team">
-          <div class="picture">
-            <img class="img-fluid" src="https://yt3.ggpht.com/a/AATXAJwEN1mCoPhbqoUB84pQ-Bd5FzSJHLZBCYb5E0i9=s900-c-k-c0xffffffff-no-rj-mo">
-          </div>
-          <div class="team-content">
-            <h1 class="name">Dr. Vasunethra Kasargod</h1>
-            <h3 class="title">MBBS MD EDRM</h3>
-            <h3 class="title">Consultant Pulmonologist</h3>
-          </div>
-          <br>
-          <ul class="social">
-            <li><h3>Mail</h3></li>
-           
-          </ul>
-        </div>
-      </div>
-          <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-centered">
-        <div class="our-team">
-          <div class="picture">
-            <img class="img-fluid" src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg">
-          </div>
-          <div class="team-content">
-            <h1 class="name">Dr. Veni N</h1>
-            <h3 class="title">MBBD MD DNB FNAMS</h3>
-            <h3 class="title">Consultant Gynocologist</h3>
-          </div>
-          <br>
-          <ul class="social">
-            <li><h3>Mail</h3></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+            <h1 class="sec-title" id="title"><span>OUR DOCTORS</span></h1>
+            <br>
+            <div class="container">
+              <div class=" parents">
+            <div class="card  doctor" style="max-width: 18rem;">
+              <img src="https://yt3.ggpht.com/a/AATXAJwEN1mCoPhbqoUB84pQ-Bd5FzSJHLZBCYb5E0i9=s900-c-k-c0xffffffff-no-rj-mo" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Vasunethra Kasargod</h5>
+                <h6>MBBS MD EDRM</h6>
+                <h6>Consultant Pulmonologist</h6>
+              </div>
+            </div>
+            <div class="card doctor" style="max-width: 18rem;">
+              <img src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Veni N</h5>  
+                <h6>MBBD MD DNB FNAMS</h6> 
+                <h6>Consultant Gynocologist</h6>     
+              </div>
+            </div>
+            </div>
+            </div>
+        
   </section>
   <!-- End f Doctors Section -->
 
-    <!-- Gallery section -->
-  <section id="Gallery">
-    <br><br><br><br>
-    <h1 class="section-title">Gallery</h1>
-    <br><br>
-    <div class="container">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-    <br><br><br><br>
-  </section>
-<!-- End of Gallery section -->
-
   <!-- Reviews -->
   <section id="reviews">
-    <br><br><br><br><br>
-    <h1 class="section-title">Reviews</h1>
-    <br><br><br>
-    <div class="container">
-      <div class="row review">
-        <div class="col-10 col-sm-9 col-md-9 col-lg-5 col-centered review-div">
-          <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
-         <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Voluptatem nobis consequuntur aliquam soluta eaque 
-          facilis inventore perferendis, ratione tempora corporis."</i>
-          <p class="stars"><center>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star-half" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-          </center></p>
-          <p class="author"> - Mr. XYZ</p>
-        </div>
-        <div class="col-10 col-sm-9 col-md-9 col-lg-5 col-centered review-div">
-          <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
-          <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-           Voluptatem nobis consequuntur aliquam soluta eaque 
-           facilis inventore perferendis, ratione tempora corporis."</i>
-           <p class="stars"><center>
-             <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-             <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-             <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-             <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-             <i class="fa fa-star-half" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-           </center></p>
-           <p class="author"> - Mr. XYZ</p>
-        </div>
-        <div class="col-10 col-sm-9 col-md-9 col-lg-5 col-centered review-div">
-          <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
-         <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Voluptatem nobis consequuntur aliquam soluta eaque 
-          facilis inventore perferendis, ratione tempora corporis."</i>
-          <p class="stars"><center>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star-half" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-          </center></p>
-          <p class="author"> - Mr. XYZ</p>
-        </div>
-        <div class="col-10 col-sm-9 col-md-9 col-lg-5 col-centered review-div">
-          <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
-         <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Voluptatem nobis consequuntur aliquam soluta eaque 
-          facilis inventore perferendis, ratione tempora corporis."</i>
-          <p class="stars"><center>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-            <i class="fa fa-star-half" style="font-size:2.2rem;color:rgb(241, 238, 14);"></i>
-          </center></p>
-          <p class="author"> - Mr. XYZ</p>
-        </div>
+    <br><br>
+    <h1 class="sec-title" id="title"><span>TESTIMONIALS</span></h1>
+      
+      <div class="container" >
+        <div id="carouselExampleControls" class=" row d-flex carousel slide justify-content-center align-items-center" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="col-8 col-sm-8 col-md-8 col-lg-8 offset-md-2 col-centered review-div ">
+                  <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
+                <i>ABCD</i>
+                  <p class="stars"><center>
+                    <span>
+                      <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem;color:rgb(216, 216, 50);"></i>
+                      <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem;color:rgb(216, 216, 50);"></i>
+                      <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem; color:rgb(216, 216, 50);"></i>
+                      <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem; color:rgb(216, 216, 50);"></i>
+                      </span>
+                  
+                  </center></p>
+                  <p class="author"> -Lohith</p>
+              </div>
+              </div>
+        {% for review in reviews %}
+              <div class="carousel-item ">
+                <div class="col-8 col-sm-8 col-md-8 col-lg-8 offset-2 col-centered review-div ">
+                    <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
+                  <i>{{ review.Review_text }}</i>
+                    <p class="stars"><center>
+                      <span>
+                        <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
+                        color:rgb(216, 216, 50);"></i>
+                    
+                        <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
+                        color:rgb(216, 216, 50);"></i>
+                    
+                        <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
+                        color:rgb(216, 216, 50);"></i>
+                    
+                        <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
+                        color:rgb(216, 216, 50);"></i>
+                    
+                        <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
+                        color:rgb(216, 216, 50);"></i>
+                    </span>
+                    </center></p>
+                    <p class="author"> - {{ review.Review_username }}</p>
+                </div>
+              </div>
+               {% endfor %}
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#17a2c2 !important;background-color:#17a2c2"></span>
+              <span class="visually-hidden" style="color:#17a2c2 !important;background-color:#17a2c2">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" >
+              <span class="carousel-control-next-icon" aria-hidden="true" style="color:#17a2c2 !important;background-color:#17a2c2"></span>
+              <span class="visually-hidden" style="color:#17a2c2 !important;background-color:#17a2c2">Next</span>
+            </button>
+          </div>
       </div>
-      <div class="facparent">
-      <a href="#"><div class="review-link"> Show more Reviews  </div> </a>
-      <a href="https://www.google.com/search?q=vr+chest+and+women+care&source=hp&ei=vSJBY4-DA-Kk8QP5oaioBA&iflsig=AJiK0e8AAAAAY0EwzRUR2PGi3dDkmXUvf2Ybd4vUJjV6&ved=0ahUKEwjP1cSiitD6AhViUnwKHfkQCkUQ4dUDCAc&uact=5&oq=vr+chest+and+women+care&gs_lcp=Cgdnd3Mtd2l6EAM6DgguEI8BEOoCEIwDEOUCOg4IABCPARDqAhCMAxDlAjoICAAQsQMQgwE6CAguELEDEIMBOgsIABCABBCxAxCDAToOCC4QgAQQsQMQgwEQ1AI6CAguEIAEELEDOgsILhCABBCxAxDUAjoRCC4QgAQQsQMQgwEQxwEQrwE6CAgAEIAEELEDOgUIABCABDoLCC4QgAQQsQMQgwE6CAgAEIAEEMkDOgUIABCGAzoLCC4QgAQQxwEQrwE6BggAEB4QFjoCCCZQ4QRY8y5gjjJoAXAAeAGAAfYEiAGkOpIBCzAuMy42LjMuNC40mAEAoAEBsAEK&sclient=gws-wiz#lrd=0x3bae17d96dc89431:0x3edac0a331a986f,3,,," target="_blank"><div class="review-link"> Add Review </div></a>
     </div>
     </div>
     <br><br>
+    
   </section>
   <!-- End of Reviews -->
 
@@ -426,13 +262,12 @@
 
   <!-- Contact Section -->
   <section id="contact">
+    <br>
+    <h1 class="sec-title" id="title"><span>CONTACT</span></h1>
     <div class="contact container">
-      <div> 
-        <h1 class="section-title" id="conh1">Contact </h1>
-      </div>
       <div class="contact-items">
         <div class="contact-item">
-          <div class="icon"><img src="https://www.redcross.org/content/dam/redcross/icons/digital-icons/phone-receiver/Phone-Receiver-1000x1000-R-RC.png.img.png" /></div>
+          <div class="icon"><img src="{% static 'img/ph.png' %}" /></div>
           <div class="contact-info">
             <h1>Phone</h1>
             <h2>+1 234 123 1234</h2>
@@ -440,7 +275,7 @@
           </div>
         </div>
         <div class="contact-item">
-          <div class="icon"><img src="https://logodix.com/logo/491680.png" /></div>
+          <div class="icon"><img src="{% static 'img/gm.webp' %}" /></div>
           <div class="contact-info">
             <h1>Email</h1>
             <h2>info@gmail.com</h2>
@@ -448,7 +283,7 @@
           </div>
         </div>
         <div class="contact-item">
-          <div class="icon"><img src="https://i.ya-webdesign.com/images/youtube-circle-logo-png-16.png" /></div>
+          <div class="icon"><img src="{% static 'img/yt.png' %}" /></div>
           <div class="contact-info">
             <h1>Youtube</h1>
             <h2>VR Chest</h2>
@@ -456,32 +291,33 @@
         </div>
        
       </div>
-    </div>
-    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered map"> 
+    
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-centered map"> 
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1026200031715!2d77.63240651430485!3d13.029136617139638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d96dc89431%3A0x3edac0a331a986f!2sVR%20CHEST%20AND%20WOMEN%20CARE!5e0!3m2!1sen!2sin!4v1665247782452!5m2!1sen!2sin" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="col-12 col-sm-12 col-md-12 col-lg-12 col-centered"></iframe>
     </div>
+  </div>
     <div class="msg container">
-      <h1 class="section-title">Leave us a Note</h1>
-   
+      <h1 class="sec-title" id="title"><span>LEAVE US A NOTE</span></h1>
+        <br><br>
       <form class="row g-3 needs-validation" method="post" action="{% url 'saveFeedback' %}">
         {% csrf_token %}
-        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
-          <label for="validationCustom01" class="form-label">Name *</label>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 offset-1 col-centered">
+          <label for="validationCustom01" class="form-label">Name <span style="color:red">*</span></label>
           <input type="text" class="form-control" id="validationCustom01" required name="name">
         </div>
-        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
-          <label for="validationCustomUsername" class="form-label" >Email *</label><br>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10  offset-1 col-centered">
+          <label for="validationCustomUsername" class="form-label" >Email <span style="color:red">*</span></label><br>
           <span class="form-text">(We never spam your email)</span>
           <div class="input-group has-validation">
             <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="email" required>
           </div>
           
         </div>
-        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
-            <label for="exampleFormControlTextarea1" class="form-label" >Messege *</label>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10  offset-1 col-centered">
+            <label for="exampleFormControlTextarea1" class="form-label" >Messege <span style="color:red">*</span></label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
         </div>
-        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-centered">
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 offset-1 col-centered">
           <button class="btn btn-primary" type="submit">Submit</button>
         </div>
       </form>
@@ -510,27 +346,6 @@
 
   <!--  JS -->
   <script src="{% static 'js/script.js' %}"></script>
-
-  <!-- Vendor -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-  crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-  integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
-  crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-  integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-  crossorigin="anonymous"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
 
 
 </body>
