@@ -105,11 +105,11 @@
     {% include 'headerstaff.html' %}
     <br><br><br><br><br>
     <div class="one">
-        <h1>Rejected Appointments</h1>
+        <h1> Today's Appointments</h1>
     </div>
     <br>
-    {% if app_all_new %}
-    <div class="container" style="margin-bottom:15px;display:flex;justify-content:flex-start;flex-direction:row;">
+   {% if app_all_new %}
+   <div class="container" style="margin-bottom:15px;display:flex;justify-content:flex-start;flex-direction:row;">
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">filter</button>
     </div>
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
@@ -146,7 +146,7 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th> 
-                  <th>Status</th> 
+                 
                 </tr>
                 {% for appointment in app_all_new %}
                 <tr>
@@ -157,7 +157,7 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
+                    
                 </tr>
                 {% endfor %}
             </table>
@@ -177,7 +177,7 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th>  
-                  <th>Status</th> 
+                  
                 </tr>
                 {% for appointment in app_all_old %}
                 <tr>
@@ -188,7 +188,7 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
+                    
                 </tr>
                 {% endfor %}
             </table>
@@ -207,7 +207,7 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th> 
-                  <th>Status</th>  
+ 
                 </tr>
                 {% for appointment in vasu_new %}
                 <tr>
@@ -218,7 +218,7 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
+                    
                 </tr>
                 {% endfor %}
             </table>
@@ -237,7 +237,6 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th>  
-                  <th>Status</th> 
                 </tr>
                 {% for appointment in vasu_old %}
                 <tr>
@@ -248,7 +247,6 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -267,7 +265,6 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th>  
-                  <th>Status</th> 
                 </tr>
                 {% for appointment in veni_new %}
                 <tr>
@@ -278,7 +275,6 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -297,7 +293,6 @@
                   <th>Date</th>
                   <th> Time</th>
                   <th>Doctor</th>  
-                  <th>Status</th> 
                 </tr>
                 {% for appointment in veni_old %}
                 <tr>
@@ -308,7 +303,6 @@
                     <td>{{appointment.Date}}</td>
                     <td>{{appointment.Time}} </td>
                     <td>{{appointment.Doctor}}</td>
-                    <td style="color:red">Rejected</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -318,6 +312,7 @@
     {% else %}
     <h4 style="text-align:center; margin-top:50px">No Appontments</h4>
     {% endif %}
+
 <br><br>
     <!-- PDF scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
@@ -404,7 +399,7 @@
 function generate1()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -416,12 +411,12 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments.pdf');
+    doc.save('Today Appointments.pdf');
    }
    function generate2()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -433,12 +428,12 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments.pdf');
+    doc.save('Today Appointments.pdf');
    }
    function generate3()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -450,12 +445,12 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments of Dr Vasunetra Kasargod.pdf');
+    doc.save('Today Appointments of Dr Vasunetra Kasargod.pdf');
    }
    function generate4()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -467,12 +462,12 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments of Dr Vasunetra Kasargod.pdf');
+    doc.save('Today Appointments of Dr Vasunetra Kasargod.pdf');
    }
    function generate5()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -484,12 +479,12 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments of Doctor Veni N.pdf');
+    doc.save('Today Appointments of Doctor Veni N.pdf');
    }
    function generate6()
    {
    const doc = new jsPDF()
-   doc.text(85, 15, "Rejected Appointments");
+   doc.text(85, 15, "Today's Appointments");
     doc.autoTable({
         startY: 20,  
          margin: {horizontal: 7},
@@ -501,7 +496,7 @@ function generate1()
                     minCellHeight: 10,
                 }
     })
-    doc.save('Rejected Appointments of Doctor Veni N.pdf');
+    doc.save('Today Appointments of Doctor Veni N.pdf');
    }
       </script>
 </body>

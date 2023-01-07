@@ -98,6 +98,7 @@
         margin-left: -50px;
         background-color: #17a2c2
       }
+    
     </style>
 </head>
 <body>
@@ -106,8 +107,9 @@
     <div class="one">
         <h1>Accepted Appointments</h1>
     </div>
-    
-    <div class="container" style="float:right;margin-bottom:15px;">
+    <br>
+    {% if app_all_new %}
+    <div class="container" style="margin-bottom:15px;display:flex;justify-content:flex-start;flex-direction:row;">
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">filter</button>
     </div>
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
@@ -131,8 +133,10 @@
             </div>
             </div>
     <div class="container all_app_new " id="all_app_new">
+        <div style="display:flex;justify-content:flex-start;">
         <input type="button" onclick="generate1()" value="Export PDF" class="btn"/>
-        <div class="appointment"style="overflow-x:auto;min-width:350px;">
+    </div>
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable1">
                 <tr>
                     <th>Sl no.</th>
@@ -163,7 +167,7 @@
 
     <div class="container all_app_old " id="all_app_old">
         <input type="button" onclick="generate2()" value="Export PDF" class="btn"/>
-        <div class="appointment">
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable2">
                 <tr>
                     <th>Sl no.</th>
@@ -193,7 +197,7 @@
     </div>
     <div class="container vasu_new " id="vasu_new">
         <input type="button" onclick="generate3()" value="Export PDF" class="btn"/>
-        <div class="appointment">
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable3">
                 <tr>
                     <th>Sl no.</th>
@@ -223,7 +227,7 @@
     </div>
     <div class="container vasu_old " id="vasu_old">
         <input type="button" onclick="generate4()" value="Export PDF" class="btn"/>
-        <div class="appointment">
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable4">
                 <tr>
                     <th>Sl no.</th>
@@ -253,7 +257,7 @@
     </div>
     <div class="container veni_new " id="veni_new">
         <input type="button" onclick="generate5()" value="Export PDF" class="btn"/>
-        <div class="appointment">
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable5">
                 <tr>
                     <th>Sl no.</th>
@@ -283,7 +287,7 @@
     </div>
     <div class="container veni_old " id="veni_old">
         <input type="button" onclick="generate6()" value="Export PDF" class="btn"/>
-        <div class="appointment">
+        <div class="appointment" style="overflow-x:auto;min-width:350px;padding:15px;">
             <table id="appointmentTable6">
                 <tr>
                     <th>Sl no.</th>
@@ -311,7 +315,9 @@
         </div> 
         
     </div>
-
+    {% else %}
+    <h4 style="text-align:center; margin-top:50px">No Appontments</h4>
+    {% endif %}
 <br><br>
     <!-- PDF scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>

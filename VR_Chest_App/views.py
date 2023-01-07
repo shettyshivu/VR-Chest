@@ -154,6 +154,22 @@ def showRejectRequests(request):
     veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
     return render(request, 'rejectedRequests.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
 
+
+@login_required(login_url='/login')
+@csrf_exempt
+def showTodayAppointments(request):
+    all_appointments = Appointment.objects.filter(RequestStatus=2, Date=date.today()) 
+    vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod", RequestStatus =2 , Date=date.today())
+    veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N", RequestStatus=2 , Date=date.today())
+    app_all_new = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    app_all_old = sorted(all_appointments, key=lambda x: (x.Date, x.Time))
+    vasu_new = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    vasu_old = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+    veni_new= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+    return render(request, 'todayAppointments.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
+
+
 @login_required(login_url='/login')
 @csrf_exempt
 def showGalleryImages(request):

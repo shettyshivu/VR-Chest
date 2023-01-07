@@ -36,5 +36,6 @@ urlpatterns = [
     path('articles',views.articles, name='articles'),
     path('articles/<article_slug>', views.individualArticle, name='individual-article'),
     path('appointments/dr-vasunetra', views.vasuAppointments, name='dr-vasunetra'),
-    path('appointments/dr-veni', views.veniAppointments, name='dr-veni')
+    path('appointments/dr-veni', views.veniAppointments, name='dr-veni'),
+    path('show-today-appointments', views.showTodayAppointments, name='show-today-appointments')
 ]

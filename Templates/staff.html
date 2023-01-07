@@ -118,7 +118,7 @@
     <br>
         <br>
 
-       
+    <div style="display:flex; flex-direction:column;align-items:center;">
     <div class="container linksparent row">
       <!-- <a href="{% url 'show-appointments' %}">  <div class="links col-12">Appointments</div> </a> <br>
       <a href="">  <div class="links col-12">Gallery Images</div> </a> <br>
@@ -137,7 +137,8 @@
                     <a href="{% url 'show-accepted-requests' %}">  <div class="links col-12">View Accepted Appointments</div> </a> <br>
                     <a href="{% url 'show-rejected-requests' %}">  <div class="links col-12">View Rejected Appointments</div> </a> <br>
                     <a href="{% url 'show-upcoming-appointments' %}">  <div class="links col-12">View Upcoming Appointments</div> </a> <br>
-                </div>
+                    <a href="{% url 'show-today-appointments' %}">  <div class="links col-12">View Today's Appointments</div> </a> <br>
+                  </div>
               </div>
         </div>
 
@@ -187,6 +188,7 @@
               </p>
       
         </div>
+</div>
 </div>
 </body>
 </html>

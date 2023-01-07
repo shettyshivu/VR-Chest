@@ -127,6 +127,18 @@
             margin-left: -50px;
             background-color: #17a2c2
           }
+          .bu
+          {
+            display:flex;
+            justify-content: flex-end;
+          }
+          @media screen and (max-width:480px)
+          {
+            .bu 
+            {
+              justify-content: center;
+            }
+          }
     </style>
 </head>
 <body>
@@ -135,9 +147,12 @@
     <div class="one">
         <h1>gallery</h1>
     </div>
-    <br>
+    <br><br>
     <div class="container">
-        <button class="btn btn-primary right" data-bs-toggle="modal" data-bs-target="#exampleModal">Upload an image</button> <br><br>
+      <div class="bu">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Upload an image</button> <br><br>
+      </div> 
+      <br>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -173,9 +188,9 @@
                         </figcaption>
                     </figure>
                 {% endfor %}
-            {% else %}
-                <h3>No images uploaded!</h3>
-            {% endif %}
+                {% else %}
+                <h4 style="text-align:center; margin-top:50px">No Images Uploaded</h4>
+                {% endif %}
         </div>
     </div>
     <br><br>
