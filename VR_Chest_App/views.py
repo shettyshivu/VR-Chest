@@ -25,7 +25,8 @@ def saveFeedback(request):
         msg=request.POST.get('msg')
         obj = Feedback (Name = name, Email=email, Messege=msg)
         obj.save()
-    return redirect('/')
+        messages.info(request,'Thanks for your valuable feedback!')
+        return redirect('/')
 
 def appointment(request):
     return render(request, 'appointment.html')
@@ -40,7 +41,8 @@ def appointmentConfirm(request):
         doctor=request.POST.get('doctor')
         obj= Appointment(Name=name,Mobileno=contact, Email=email, Date=date, Time=time, Doctor=doctor)
         obj.save()
-    return redirect('/')
+        messages.info(request,'Appointment Request Sent!')
+        return redirect('/')
 
 @csrf_exempt
 def logins(request):
@@ -59,40 +61,43 @@ def logins(request):
 
 def logout(request):
     auth.logout(request)
+    messages.info(request,'Succesfully logged out!')
     return redirect('/')
-    
+
+
 @login_required(login_url='/login')
 @csrf_exempt
 def staff(request):
-    a = Appointment.objects.all()
-    an=0
-    x= len(a)
-    for i in a:
-        if i.RequestStatus==2 :
-            if i.Date < date.today():
-                an=an+1
-            if i.Date ==date.today() and i.Time <= datetime.now().time():
-                an=an+1
-    r= Review.objects.all()
-    rn = len(r)
-    f= Feedback.objects.all()
-    fn=len(f)
-    return render(request, 'staff.html',{'a':an, 'r':rn, 'f':fn})
+    return render(request, 'staff.html')
+
 
 @login_required(login_url = '/login')
 def showAppointments (request):
-    appointments = Appointment.objects.all() 
-    return render(request, 'showAppointments.html', {'appointments':appointments})
+    all_appointments = Appointment.objects.all() 
+    vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod")
+    veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N")
+    app_all_new = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    app_all_old = sorted(all_appointments, key=lambda x: (x.Date, x.Time))
+    vasu_new = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    vasu_old = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+    veni_new= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+    return render(request, 'showAppointments.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
+
 
 @login_required(login_url='/login')
 @csrf_exempt
 def handleRequests(request):
-        appointments = Appointment.objects.all()
-        pending=[]
-        for appointment in appointments :
-            if appointment.RequestStatus == 1 :
-                pending.append(appointment)
-        return render(request, 'handleRequests.html',{'appointments':pending})
+        all_appointments = Appointment.objects.filter(RequestStatus=1) 
+        vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod", RequestStatus =1)
+        veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N", RequestStatus=1)
+        app_all_new = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+        app_all_old = sorted(all_appointments, key=lambda x: (x.Date, x.Time))
+        vasu_new = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+        vasu_old = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+        veni_new= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+        veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+        return render(request, 'handleRequests.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
 
 @login_required(login_url='/login')
 @csrf_exempt
@@ -123,24 +128,31 @@ def requestReject(request):
 @login_required(login_url='/login')
 @csrf_exempt
 def showAcceptRequests(request):
-    appointments = Appointment.objects.all()
-    accepted=[]
-    for appointment in appointments :
-        if appointment.RequestStatus == 2 :
-            accepted.append(appointment)
-    return render(request, 'acceptedRequests.html',{'appointments':accepted})
+    all_appointments = Appointment.objects.filter(RequestStatus=2) 
+    vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod", RequestStatus =2)
+    veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N", RequestStatus=2)
+    app_all_new = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    app_all_old = sorted(all_appointments, key=lambda x: (x.Date, x.Time))
+    vasu_new = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    vasu_old = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+    veni_new= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+    return render(request, 'acceptedRequests.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
 
 
 @login_required(login_url='/login')
 @csrf_exempt
 def showRejectRequests(request):
-    appointments = Appointment.objects.all()
-    rejected=[]
-    for appointment in appointments :
-        if appointment.RequestStatus == 3 :
-            rejected.append(appointment)
-    return render(request, 'rejectedRequests.html',{'appointments':rejected})
-
+    all_appointments = Appointment.objects.filter(RequestStatus=3) 
+    vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod", RequestStatus =3)
+    veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N", RequestStatus=3)
+    app_all_new = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    app_all_old = sorted(all_appointments, key=lambda x: (x.Date, x.Time))
+    vasu_new = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    vasu_old = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+    veni_new= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    veni_old = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+    return render(request, 'rejectedRequests.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})
 
 @login_required(login_url='/login')
 @csrf_exempt
@@ -244,16 +256,53 @@ def editReview(request, review_id):
 @login_required(login_url='/login')
 @csrf_exempt
 def showUpcomingAppointments(request):
-    appointments = Appointment.objects.all() 
-    x=[]
-    for a in appointments:
-        if a.RequestStatus==2:
-            if a.Date > date.today():
-                x.append(a)
-            if a.Date== date.today() and a.Time >= datetime.now().time():
-                x.append(a)              
-    return render(request, 'showAppointments.html', {'appointments':x})
-
+    all_appointments = Appointment.objects.filter(RequestStatus=2) 
+    vasu_appointments = Appointment.objects.filter(Doctor = "Dr. Vasunetra Kasargod", RequestStatus =2)
+    veni_appointments = Appointment.objects.filter(Doctor="Dr. Veni N", RequestStatus=2)
+    app_all_new1 = sorted(all_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    app_all_old1 = sorted(all_appointments, key=lambda x: (x.Date, x.Time), )
+    vasu_new1 = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    vasu_old1 = sorted(vasu_appointments, key=lambda x: (x.Date, x.Time))
+    veni_new1= sorted(veni_appointments, key=lambda x: (x.Date, x.Time), reverse=True)
+    veni_old1 = sorted(veni_appointments, key=lambda x: (x.Date, x.Time))
+    app_all_new=[]
+    app_all_old=[]
+    vasu_new=[]
+    vasu_old=[]
+    veni_new=[]
+    veni_old=[]
+    for a in app_all_new1:
+        if a.Date > date.today():
+            app_all_new.append(a)
+        if (a.Date== date.today() and a.Time >= datetime.now().time()):
+            app_all_new.append(a)   
+    for a in app_all_old1:
+        if a.Date > date.today():
+            app_all_old.append(a)
+        if a.Date== date.today() and a.Time >= datetime.now().time():
+            app_all_old.append(a) 
+    for a in veni_new1:
+        if a.Date > date.today():
+            veni_new.append(a)
+        if a.Date== date.today() and a.Time >= datetime.now().time():
+            veni_new.append(a)   
+    for a in veni_old1:
+        if a.Date > date.today():
+            veni_old.append(a)
+        if a.Date== date.today() and a.Time >= datetime.now().time():
+            veni_old.append(a)   
+    for a in vasu_new1:
+        if a.Date > date.today():
+            vasu_new.append(a)
+        if a.Date== date.today() and a.Time >= datetime.now().time():
+            vasu_new.append(a) 
+    for a in vasu_old1:
+        if a.Date > date.today():
+            vasu_old.append(a)
+        if a.Date== date.today() and a.Time >= datetime.now().time():
+            vasu_old.append(a)   
+    return render(request, 'showUpcomingAppointments.html', {'app_all_new':app_all_new,'app_all_old':app_all_old,'vasu_new':vasu_new,'vasu_old':vasu_old,'veni_new':veni_new,'veni_old':veni_old})           
+    
 
 def facilities(request):
     return render(request, 'facilities.html')
@@ -321,4 +370,10 @@ def individualArticle(request, article_slug):
     obj=Article.objects.get(slug=article_slug)
     l = [obj]
     return render(request, 'individualArticle.html', {'articles':l})
+
+def vasuAppointments(request):
+    return render(request,'vasuAppointments.html')
+
+def veniAppointments(request):
+    return render(request, 'veniAppointments.html')
         

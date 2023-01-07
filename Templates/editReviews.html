@@ -16,16 +16,60 @@
         {
             text-align: center;
         }
+        .one h1 {
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-weight: 300;
+            font-size: 3rem;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+          }
+          .one h1:before {
+            width: 28px;
+            height: 5px;
+            display: block;
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            margin-left: -14px;
+            background-color: #17a2c2;
+          }
+          .one h1:after {
+            width: 100px;
+            height: 1px;
+            display: block;
+            content: "";
+            position: relative;
+            margin-top: 25px;
+            left: 50%;
+            margin-left: -50px;
+            background-color: #17a2c2
+          }
+          .form-control
+          {
+            margin-bottom:15px !important;
+          }
      </style>
 </head>
 <body>
-    <br><br>
-    <h1>Edit Review</h1>
+    {% include 'headerstaff.html' %}
+    <br><br><br><br><br>
+    <div class="one">
+        <h1>Edit Review</h1>
+    </div>
     <br><br>
     <div class="container">
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p}}
+            <br>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>

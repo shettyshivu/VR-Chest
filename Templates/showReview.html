@@ -32,13 +32,53 @@
 h1{
     text-align:center;
 }
+.one h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  font-size: 3rem;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.one h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #17a2c2;
+}
+.one h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #17a2c2
+}
 
 
     </style>
 </head>
 <body>
-    <h1>Reviews</h1> 
-    <br>
+    {% include 'headerstaff.html' %} 
+    <br><br><br><br><br>
+    <div class="one">
+      <h1>Reviews</h1>
+    </div>
+    <br><br>
     <div class="container">
       <div class="row review justify-content-around">
         {% for review in reviews %}
@@ -75,5 +115,6 @@ h1{
         {% endfor %}
       </div>
     </div>
+    <br>
 </body>
 </html>

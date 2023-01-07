@@ -34,5 +34,7 @@ urlpatterns = [
     path('edit-article/<article_id>', views.editArticle, name='edit-article'),
     path('submit-article', views.submitArticle, name='submit-article'),
     path('articles',views.articles, name='articles'),
-    path('articles/<article_slug>', views.individualArticle, name='individual-article')
+    path('articles/<article_slug>', views.individualArticle, name='individual-article'),
+    path('appointments/dr-vasunetra', views.vasuAppointments, name='dr-vasunetra'),
+    path('appointments/dr-veni', views.veniAppointments, name='dr-veni')
 ]

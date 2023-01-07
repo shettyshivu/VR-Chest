@@ -16,51 +16,45 @@
 
 </head>
 <body>
-    <br><br>
-    <h1>Book appointment</h1>
-    <div class="container">
-    <form action="{% url 'Appointment-confirm' %}" method="post">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="exampleInputPassword2" class="form-label">Name *</label>
-            <input type="text" class="form-control" id="exampleInputPassword2" name="name" required >
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword3" class="form-label">Contact no *</label>
-            <input type="tel" class="form-control" id="exampleInputPassword3" name="mobileno" pattern="[0-9]{10}" placeholder="10 digit Phone no" required>
-          </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address *</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" required>
-          <div id="emailHelp" class="form-text">We'll contact you through mail, kindly provide a valid one.</div>
-        </div>
-        <div class="mb-3">
-          <label for="datePickerId" class="form-label" required>Date *</label>
-          <input type="date" class="form-control" id="datePickerId" name="date">
-        </div>
-        <div class="mb-3">
-            <label for="timeId" class="form-label">Time *</label>
-            <input type="time" class="form-control" id="timeId" min="09:00" max="20:00" name="time" required>
-            <div id="timeHelp" class="form-text">Kindly choose a time between 9 and 20 (9:00AM and 8:00PM).</div>
-        </div>
-        <div class="mb-3">
-            <label for="doctor" class="form-label">Doctor *</label>
-            <select class="form-select" aria-label="Default select example" id="doctor" name="doctor" required>
-                <option value="Dr. Vasunetra Kasargod">Dr. Vasunetra Kasargod</option>
-                <option value="Dr. Veni N">Dr. Veni N</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary" >Submit</button>
-      </form>
+  {% include 'header.html' %}
+  <br><br><br><br><br><br>
+  <div class="one">
+    <h1>Book Appointment</h1>
+  </div>
+<br><br>
+  <div class="container  doc">
+    <div class="doc1 row offset-2 col-8">
+      <div class="col-3 ">
+        <img src="{% static 'img/advtech.webp' %}" alt="doctor_image">
+      </div>
+      <div class="col-7 offset-1">
+        <p><h4>Dr. Vasunetra Kasargod</h4></p>
+        <p>Consultant Pulmonologist</p>
+        <p>
+          <a href="{% url 'dr-vasunetra' %}">
+          <button class="btn btn-primary"> Book Appointment</button>
+          </a>
+        </p>
+      </div>
     </div>
-
-    <!-- JS -->
-    <script>
-        datePickerId.min= new Date().toISOString().split("T")[0];
-        var d = new Date();
-        var tom = new Date();
-        tom.setDate(d.getDate()+6);
-        datePickerId.max=tom.toISOString().split("T")[0];
-    </script>
+    <br><br>
+    <div class="doc2 row offset-2 col-8">
+      <div class="col-3 ">
+        <img src="{% static 'img/advtech.webp' %}" alt="doctor_image">
+      </div>
+      <div class="col-7 offset-1">
+        <p><h4>Dr. Veni N</h4></p>
+        <p>Consultant Gynocologist</p>
+        <p>
+         <a href="{% url 'dr-veni' %}">
+          <button class="btn btn-primary"> Book Appointment</button>
+          </a>
+        </p>
+      </div>
+    </div>
+    
+  </div>
+<br><br><br>
+  {% include 'footer.html' %}
 </body>
 </html>

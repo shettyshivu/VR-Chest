@@ -91,13 +91,50 @@
           .hover-img:hover figcaption {
             opacity: 1;
           }
+          .one h1 {
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-weight: 300;
+            font-size: 3rem;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+          }
+          .one h1:before {
+            width: 28px;
+            height: 5px;
+            display: block;
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            margin-left: -14px;
+            background-color: #17a2c2;
+          }
+          .one h1:after {
+            width: 100px;
+            height: 1px;
+            display: block;
+            content: "";
+            position: relative;
+            margin-top: 25px;
+            left: 50%;
+            margin-left: -50px;
+            background-color: #17a2c2
+          }
     </style>
 </head>
 <body>
-    <br>
-    <h1>
-        Gallery Images
-    </h1>
+    {% include 'headerstaff.html' %}
+    <br><br><br><br><br>
+    <div class="one">
+        <h1>gallery</h1>
+    </div>
     <br>
     <div class="container">
         <button class="btn btn-primary right" data-bs-toggle="modal" data-bs-target="#exampleModal">Upload an image</button> <br><br>
@@ -141,5 +178,6 @@
             {% endif %}
         </div>
     </div>
+    <br><br>
 </body>
 </html>

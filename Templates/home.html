@@ -64,8 +64,7 @@
     </div>
   </section>
   <!-- End Header -->
-
-
+  
   <!-- Hero Section  -->
   <section id="hero">
     <!-- <div class="hero containers"> -->
@@ -83,6 +82,24 @@
          
         </div>
         <div class="content">
+          {% for messege in messages %}
+              <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </symbol>
+                </svg>
+                <div class="alert alert-success d-flex align-items-center" role="alert" style="margin-top:-100px;padding:0px;padding-left:10px;">
+                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                  <br><br>
+                  <div class="col-10" style="text-align:left;">
+                    {{ messege }}
+                  </div>
+                  <div class="float-right col-1" style="float:right; text-align:right;">
+                  
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float:right;text-align:right"></button>
+                  </div>
+                  </div>
+              {% endfor %}
           <h1>VR Chest and Women Care</h1>
           <h3>Lorem ipsum dolor sit blanditiis quidem repudiandae doloremque, ratione impedit!</h3>
           <div class="appoint">
@@ -105,7 +122,11 @@
 
   <!-- About Section -->
   <section id="about">
-  <h1 class="sec-title" id="title"><span>ABOUT US</span></h1>
+    <br><br>
+  <div class="one">
+    <h1>About Us</h1>
+  </div>
+  <br>
   <div class="container mainparent">
   <div class="parent1 col-12">
     <div class="p1 col-sm-12 col-md-4">
@@ -161,9 +182,11 @@
 
   <!-- Doctors Section -->
   <section id="doctors">
-    <br><br><br>
-            <h1 class="sec-title" id="title"><span>OUR DOCTORS</span></h1>
-            <br>
+    <br><br>
+    <div class="one">
+      <h1>our doctors</h1>
+    </div>
+    <br>
             <div class="container">
               <div class=" parents">
             <div class="card  doctor" style="max-width: 18rem;">
@@ -191,7 +214,10 @@
   <!-- Reviews -->
   <section id="reviews">
     <br><br>
-    <h1 class="sec-title" id="title"><span>TESTIMONIALS</span></h1>
+    <div class="one">
+      <h1>testimonials</h1>
+    </div>
+    <br><br>
       
       <div class="container" >
         <div id="carouselExampleControls" class=" row d-flex carousel slide justify-content-center align-items-center" data-bs-ride="carousel">
@@ -262,8 +288,11 @@
 
   <!-- Contact Section -->
   <section id="contact">
-    <br>
-    <h1 class="sec-title" id="title"><span>CONTACT</span></h1>
+    <br><br>
+    <div class="one">
+      <h1>contact</h1>
+    </div>
+
     <div class="contact container">
       <div class="contact-items">
         <div class="contact-item">
@@ -297,8 +326,11 @@
     </div>
   </div>
     <div class="msg container">
-      <h1 class="sec-title" id="title"><span>LEAVE US A NOTE</span></h1>
-        <br><br>
+   
+      <div class="one">
+        <h1>Leave us a note</h1>
+      </div>
+      <br>
       <form class="row g-3 needs-validation" method="post" action="{% url 'saveFeedback' %}">
         {% csrf_token %}
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 offset-1 col-centered">
