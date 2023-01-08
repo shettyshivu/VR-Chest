@@ -505,7 +505,7 @@ img {
   text-align: right;
   margin-top: 10px;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .facparent a {
   text-decoration: none;
@@ -546,7 +546,24 @@ img {
   max-width: 1200px;
   width: 90%;
 }
+.flexcontact 
+{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.flexcontact2
+{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 20px;
+}
 
+.flexcontact div button
+{
+  padding: 20px;
+}
 #contact .contact-items {
   /* max-width: 400px; */
   width: 100%;
@@ -611,6 +628,15 @@ img {
   .map iframe {
     margin-top: 30px;
   }
+  .flexcontact 
+  {
+    margin-top:50px;
+  }
+  .msg 
+  {
+    margin-top:100px !important;
+    transform: translateY(0) !important;
+  }
   #conh1 {
     transform: translateY(0px);
     padding-top: 75px;
@@ -622,6 +648,22 @@ img {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 768px) {
+ 
+  .flexcontact 
+  {
+   flex-direction: column;
+   row-gap:20px;
+   align-items: center;
+  }
+  .flexcontact2 
+  {
+   flex-direction: column;
+   row-gap:20px;
+   align-items: center;
+  }
+}
+
 
 /*End contact Section */
 

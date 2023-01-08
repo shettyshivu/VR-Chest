@@ -47,7 +47,7 @@
       <div class="nav-bars">
         <div class="brands">
 
-          <img src="{% static 'img/qualityequip.webp' %}" alt="">
+          <img src="{% static 'img/logo.png' %}" alt="">
 
         </div>
         <div class="nav-lists">
@@ -72,7 +72,7 @@
 
     <div class="banner">
       <div class="slider">
-        <img src="https://wallpapercave.com/wp/wp6681966.png" alt="" id="slideImg">
+        <img src="https://res.cloudinary.com/dayolam6d/image/upload/v1673183197/62857_ccwtjs.jpg" alt="hospital" id="slideImg">
 
       </div>
 
@@ -80,6 +80,7 @@
 
       </div>
       <div class="content">
+        <br>
         {% for messege in messages %}
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
           <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -88,7 +89,7 @@
           </symbol>
         </svg>
         <div class="alert alert-success d-flex align-items-center" role="alert"
-          style="margin-top:-100px;padding:0px;padding-left:10px;">
+          style="margin-top:-50px;padding:0px;padding-left:10px;padding-right:10px;">
           <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
             <use xlink:href="#check-circle-fill" />
           </svg>
@@ -96,7 +97,7 @@
           <div class="col-10" style="text-align:left;">
             {{ messege }}
           </div>
-          <div class="float-right col-1" style="float:right; text-align:right;">
+          <div class="float-right col-1" style="float:right; text-align:right;right:10px;">
 
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
               style="float:right;text-align:right"></button>
@@ -111,9 +112,9 @@
               <button class="btn btn-primary">Book an appointment</button>
             </a>
             <br>
-            <a href="">
+            <a href="tel:08048903353">
               <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 080 -
-                1234567</button>
+                48903353</button>
             </a>
           </div>
         </div>
@@ -139,12 +140,13 @@
           </div>
 
           <div class="p2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Veniam amet autem aliquid sit in, eveniet veritatis molestiae
-            cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Veniam amet autem aliquid sit in, eveniet veritatis molestiae
-            cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+            Who doesn’t want to be healthy? We live in a world where everyone is racing
+against time and pace. People are suffering from a lot of illnesses due to the
+changing environment and stressful life. Women are having early menopause and
+infertility due to late marriages and lifestyles. With growing pollution and
+exposure to new viruses, people suffer from various respiratory illnesses. We want
+a doctor who can be compassionate, and at the same time, be approachable as your
+friend.
           </div>
         </div>
         <div class="parent2">
@@ -152,12 +154,10 @@
             <img src="{% static 'img/gyn.jpg' %}" alt="">
           </div>
           <div class="p2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Veniam amet autem aliquid sit in, eveniet veritatis molestiae
-            cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Veniam amet autem aliquid sit in, eveniet veritatis molestiae
-            cupiditate illum perspiciatis ratione illo doloribus dicta odio perferendis nulla doloremque iste ea!
+            Welcome to <b> VR CHEST AND WOMEN CARE CLINIC.</b>
+            The clinic was conceived with the ideology of providing the state of the art
+            facilities in the management of respiratory and women’s health by Dr. Vasunethra
+            Kasaragod and Dr. Veni Nekkilady.
           </div>
         </div>
       </div>
@@ -196,27 +196,91 @@
     <div class="container">
       <div class=" parents">
         <div class="card  doctor" style="max-width: 18rem;">
-          <img src="https://yt3.ggpht.com/a/AATXAJwEN1mCoPhbqoUB84pQ-Bd5FzSJHLZBCYb5E0i9=s900-c-k-c0xffffffff-no-rj-mo"
-            class="card-img-top" alt="...">
+          <img src="{% static 'img/vasu.jpg' %}"
+            class="card-img-top" alt="Dr Vasunethra" loading="lazy">
           <div class="card-body">
             <h5 class="card-title">Dr. Vasunethra Kasargod</h5>
             <h6>MBBS MD EDRM</h6>
             <h6>Consultant Pulmonologist</h6>
+            <center><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Know More
+            </button></center>
           </div>
         </div>
         <div class="card doctor" style="max-width: 18rem;">
           <img
-            src="https://static3.depositphotos.com/1003940/194/i/950/depositphotos_1949337-stock-photo-female-doctor-in-surgery.jpg"
-            class="card-img-top" alt="...">
+            src="{% static 'img/veni.jpg' %}"
+            class="card-img-top" alt="dr Veni" loading="lazy">
           <div class="card-body">
             <h5 class="card-title">Dr. Veni N</h5>
             <h6>MBBD MD DNB FNAMS</h6>
             <h6>Consultant Gynocologist</h6>
+            <center><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              Know More
+            </button></center>
           </div>
         </div>
       </div>
     </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dr. Vasunethra Kasaragod</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Dr. Vasunethra Kasargod is a well-known pulmonologist in Bangalore whose main
+        specialties include asthma, allergy, and interventional pulmonology. He has
+        completed his Med-school at the reputed Bangalore Medical College and Research
+        Institute. Later, the doctor obtained his Specialty MD degree in pulmonology (lung
+        diseases) from Lokamanya Tilak Medical college and hospital, Mumbai, which is
+        one of the best institutes for the same in India. He later on obtained the prestigious
+        European Diploma in Respiratory Diseases from the European Respiratory Society
+        in France. He has gained rich experience in Pulmonology being associated with
+        various Institutes in Bangalore for 11 years. He treated thousands of patients
+        suffering from lung problems, mastered the skills, and is currently working as a
+        Consultant Interventional Pulmonologist at the premier Manipal Hospital Miller’s
+        Road, Bangalore.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dr. Veni N</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Dr. Veni Nekkilady is a gynecologist whose main area of interest includes
+        laparoscopy and high-risk pregnancy. She graduated from the prestigious
+        Bangalore medical college and went on to be a rank holder in AIIMS Delhi from
+        where she attained her specialty in gynecology. At AIIMS, she was guided by the
+        best gynecologists in India and treated various patients suffering from infertility,
+        high-risk pregnancy, and cancer, catering to patients from all over India. Her
+        passion was to learn the art of healing. She went on to advanced training in
+        laparoscopy surgery from Kochi, Kerala. She has worked as an Assistant professor
+        at St. Johns medical college and MS Ramiah Medical College, Bangalore for 5
+        years. She has been associated with Cloud Nine and Motherhood Hospitals for 4
+        years as a Consultant Gynecologist.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
   <!-- End f Doctors Section -->
 
@@ -241,6 +305,7 @@
                   <span>
                     <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem;color:rgb(216, 216, 50);"></i>
                     <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem;color:rgb(216, 216, 50);"></i>
+                    <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem; color:rgb(216, 216, 50);"></i>
                     <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem; color:rgb(216, 216, 50);"></i>
                     <i class="fa fa-star" aria-hidden="true" style=" font-size:1.6rem; color:rgb(216, 216, 50);"></i>
                   </span>
@@ -302,6 +367,18 @@
     </div>
     </div>
     </div>
+    <div class="flexcontact2">
+      <div>
+        <a href="">
+          <button class="btn btn-primary">View all Google Reviews</button>
+        </a>
+      </div>
+      <div>
+        <a href="">
+          <button class="btn btn-primary">View all Practo Reviews</button>
+        </a>
+      </div>
+      </div>
     <br><br>
 
   </section>
@@ -318,7 +395,25 @@
 
     <div class="contact container">
 
-
+     <div class="flexcontact">
+      <div>
+        <a href="tel:08048903353">
+          <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 080 -
+            48903353</button>
+        </a>
+      </div>
+      <div>
+        <a href="tel:9742532343">
+          <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 97425 32343</button>
+        </a>
+      </div>
+      <div>
+        <a href="">
+          <button class="btn btn-primary"><i class="fa fa-envelope" style="font-size:24px;"></i> : abcd@gmail.com
+            </button>
+        </a>
+      </div>
+     </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-centered map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1026200031715!2d77.63240651430485!3d13.029136617139638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d96dc89431%3A0x3edac0a331a986f!2sVR%20CHEST%20AND%20WOMEN%20CARE!5e0!3m2!1sen!2sin!4v1665247782452!5m2!1sen!2sin"
@@ -331,7 +426,8 @@
       <div class="one">
         <h1>Leave us a note</h1>
       </div>
-      <br>
+      <br><br>
+
       <form class="row g-3 needs-validation" method="post" action="{% url 'saveFeedback' %}">
         {% csrf_token %}
         <div class="col-10 col-sm-10 col-md-10 col-lg-10 offset-1 col-centered">
@@ -381,7 +477,8 @@
   <!--  JS -->
   <script src="{% static 'js/script.js' %}"></script>
 
-
+<!-- Pre loader -->
+{% include 'preloader.html' %}
 </body>
 
 </html>

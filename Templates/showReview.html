@@ -7,11 +7,16 @@
     <title>Document</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+ crossorigin="anonymous"></script>
+   
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
         .review-div
@@ -68,12 +73,22 @@ h1{
   margin-left: -50px;
   background-color: #17a2c2
 }
-
+@media screen and (max-width: 480px) {
+	.one h1 {
+	  font-size: 2.5rem !important;
+	}
+  }
+  @media screen and (max-width: 300px) {
+	.one h1 {
+	  font-size: 2rem !important;
+	}
+  }
 
     </style>
 </head>
 <body>
     {% include 'headerstaff.html' %} 
+    
     <br><br><br><br><br>
     <div class="one">
       <h1>Reviews</h1>
@@ -88,21 +103,27 @@ h1{
           <p class="stars"><center>
             
             <span>
-              <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
-              color:rgb(216, 216, 50);"></i>
-          
-              <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
-              color:rgb(216, 216, 50);"></i>
-          
-              <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
-              color:rgb(216, 216, 50);"></i>
-          
-              <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
-              color:rgb(216, 216, 50);"></i>
-          
-              <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true" style=" font-size:1.6rem;
-              color:rgb(216, 216, 50);"></i>
-          </span>
+              <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}"
+                aria-hidden="true" style=" font-size:1.6rem;
+                  color:rgb(216, 216, 50);"></i>
+
+              <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}"
+                aria-hidden="true" style=" font-size:1.6rem;
+                  color:rgb(216, 216, 50);"></i>
+
+              <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}"
+                aria-hidden="true" style=" font-size:1.6rem;
+                  color:rgb(216, 216, 50);"></i>
+
+              <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}"
+                aria-hidden="true" style=" font-size:1.6rem;
+                  color:rgb(216, 216, 50);"></i>
+
+              <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}"
+                aria-hidden="true" style=" font-size:1.6rem;
+                  color:rgb(216, 216, 50);"></i>
+            </span>
+        
           </center></p>
           <p class="author"> - {{ review.Review_username }}</p>
           <a href="{% url 'edit-review' review.id  %}">

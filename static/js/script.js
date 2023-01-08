@@ -31,9 +31,9 @@ menu_item.forEach((item) => {
 
 var s= document.getElementById("slideImg");
 var images = new Array (
-	"https://cdn-endpoint-afib.azureedge.net/afibmatters/2020/01/iStock-171372917-1536x1024.jpg",
-	"https://www.babycenter.com/ims/2015/03/78751269_wide.jpg",
-	"https://wallpapercave.com/wp/wp6681966.png"
+	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183197/62857_ccwtjs.jpg",
+	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183264/54789_oi2iye.jpg",
+	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183284/45531_aaxk9s.jpg"
 );
 
 var len = images.length;

@@ -139,10 +139,21 @@
               justify-content: center;
             }
           }
+          @media screen and (max-width: 480px) {
+            .one h1 {
+              font-size: 2.5rem !important;
+            }
+            }
+            @media screen and (max-width: 300px) {
+            .one h1 {
+              font-size: 2rem !important;
+            }
+            }
     </style>
 </head>
 <body>
     {% include 'headerstaff.html' %}
+    
     <br><br><br><br><br>
     <div class="one">
         <h1>gallery</h1>

@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -15,40 +19,37 @@
     <div class="one">
 		<h1>CONTACT</h1>
 	</div>
+	<br><br>
     <div class="contact container">
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="icon"><img src="{% static 'img/ph.png' %}" /></div>
-          <div class="contact-info">
-            <h1>Phone</h1>
-            <h2>+1 234 123 1234</h2>
-            <h2>+1 234 123 1234</h2>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><img src="{% static 'img/gm.webp' %}" /></div>
-          <div class="contact-info">
-            <h1>Email</h1>
-            <h2>info@gmail.com</h2>
-            <h2>abcd@gmail.com</h2>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><img src="{% static 'img/yt.png' %}" /></div>
-          <div class="contact-info">
-            <h1>Youtube</h1>
-            <h2>VR Chest</h2>
-          </div>
-        </div>
-       
+
+     <div class="flexcontact">
+      <div>
+        <a href="">
+          <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 080 -
+            1234567</button>
+        </a>
       </div>
-    
+      <div>
+        <a href="">
+          <button class="btn btn-primary"><i class="fa fa-phone fa-shake" style="font-size:24px;"></i> : 080 -
+            1234567</button>
+        </a>
+      </div>
+      <div>
+        <a href="">
+          <button class="btn btn-primary"><i class="fa fa-envelope" style="font-size:24px;"></i> : abcd@gmail.com
+            </button>
+        </a>
+      </div>
+     </div>
+	 <br>
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-centered map"> 
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1026200031715!2d77.63240651430485!3d13.029136617139638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d96dc89431%3A0x3edac0a331a986f!2sVR%20CHEST%20AND%20WOMEN%20CARE!5e0!3m2!1sen!2sin!4v1665247782452!5m2!1sen!2sin" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="col-12 col-sm-12 col-md-12 col-lg-12 col-centered"></iframe>
     </div>
   </div>
-  </section>
   <br>
+  </section>
+
   <section id="footer">
     <div class="footer containers">
       
@@ -64,7 +65,13 @@
 	background-color: #f9f9fa;
 }
 
-
+@media screen and(max-width:500px)
+{
+	.footer p 
+	{
+		font-size:smaller;
+	}
+}
 #contact .contact {
 	flex-direction: column;
 	max-width: 1200px;
@@ -149,6 +156,27 @@
 
 
   }
+  .flexcontact 
+{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.flexcontact div button
+{
+  padding: 20px;
+}
+
+@media screen and (max-width:700px)
+{
+	.flexcontact 
+	{
+		flex-direction: column;
+		row-gap: 20px;
+		align-items: center;
+
+	}
+}
 @media screen and (max-width:768px)
 {
 .map iframe 
