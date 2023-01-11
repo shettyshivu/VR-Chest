@@ -371,8 +371,9 @@ def submitArticle(request):
     if request.method=='POST':
         title=request.POST.get('title')
         content=request.POST.get('content')
+        link = request.POST.get('link')
         slug = slugify(title)
-        obj= Article(title=title, content=content,slug=slug)
+        obj= Article(title=title, content=content,slug=slug, link=link)
         obj.save()
         return redirect('/staff')
 

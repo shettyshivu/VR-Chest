@@ -38,12 +38,21 @@
             <div class="art">
                 
                 <div>
+                    <p>
                       {{ article.content | linebreaksbr }}
+                      </p>
                        
                 </div>
                 <br>
-                {% endfor %}
+               
             </div>
+            {% if article.link %}
+            <div class="link">
+                <p>For more information:</p>
+                <p><a href="{{ article.link }}">{{article.link}}</a></p>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </section>
     <br><br>

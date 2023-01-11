@@ -20,13 +20,15 @@ class ReviewForm(ModelForm):
 class ArticleForm(ModelForm):
     class Meta :
         model= Article
-        fields=('title', 'content')
+        fields=('title', 'content', 'link')
         widgets= {
             'title': forms.TextInput(attrs={'class':'form-control'}),
-            'content': forms.Textarea(attrs={'class':'form-control', 'rows':10})
+            'content': forms.Textarea(attrs={'class':'form-control', 'rows':10}),
+            'link': forms.Textarea(attrs={'class':'form-control', 'rows':2})
         }
         labels={
             'title':'Title *',
-            'content':'Content *'
+            'content':'Content *',
+            'link':'E-Article link (if any)'
         }
         
