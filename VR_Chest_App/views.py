@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Feedback, Appointment, Gallery_Image, Review, Article
 # import googlemaps
 # import pandas as pd
+import calendar
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -11,6 +12,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .forms import ReviewForm, ArticleForm
 from datetime import date, datetime
 from slugify import slugify
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -24,7 +26,10 @@ def saveFeedback(request):
         email=request.POST.get('email')
         msg=request.POST.get('msg')
         obj = Feedback (Name = name, Email=email, Messege=msg)
-        obj.save()
+        obj.save()  
+        subject = 'VR Chest and Women Care'
+        msg='Thank you for your valueable feedback!\n\n Regards, \n VR Chest and Women Care'
+        send_mail(subject, msg , 'karthzz003@gmail.com', [email], fail_silently=True)
         messages.info(request,'Thanks for your valuable feedback!')
         return redirect('/')
 
@@ -39,8 +44,18 @@ def appointmentConfirm(request):
         date=request.POST.get('date')
         time=request.POST.get('time')
         doctor=request.POST.get('doctor')
+        born = datetime.weekday()
+        day = calendar.day_name[born]
+        if( doctor == "Dr. Vasunethra Kasargod" and (day =='Tuesday' or day == 'Sunday' or time<17 or time>21)):
+            return render(request, 'detailswrong.html') 
         obj= Appointment(Name=name,Mobileno=contact, Email=email, Date=date, Time=time, Doctor=doctor)
         obj.save()
+        subject = 'VR Chest and Women Care'
+        msg='Appointment request has been sent!\n\nThank you for using our website to book your appointment. You will receive a confirmation mail once your request is accpeted. \n\nRegards, \nVR Chest and Women Care'
+        try:
+            send_mail(subject, msg , 'karthzz003@gmail.com', [email], fail_silently=False)
+        except:
+            return render(request, 'mailfail.html')
         messages.info(request,'Appointment Request Sent!')
         return redirect('/')
 

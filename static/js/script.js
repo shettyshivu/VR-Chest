@@ -31,9 +31,10 @@ menu_item.forEach((item) => {
 
 var s= document.getElementById("slideImg");
 var images = new Array (
-	"https://res.cloudinary.com/dayolam6d/image/upload/v1673461142/Chest_Women_Care_b_1_1_cpf37p.png",
+
 	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183197/62857_ccwtjs.jpg",
 	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183264/54789_oi2iye.jpg",
+	"https://res.cloudinary.com/dayolam6d/image/upload/v1673461142/Chest_Women_Care_b_1_1_cpf37p.png",
 	"https://res.cloudinary.com/dayolam6d/image/upload/v1673183284/45531_aaxk9s.jpg"
 );
 

@@ -23,7 +23,8 @@
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm-YWWx-RNETQ6bX_LDm2eARqaxQ63g3Y&callback=initMap&v=weekly"
     defer></script>
-  <title>My Website</title>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+  <title>VR Chest and Women Care</title>
 
 
   <!-- Google Reviews -->
@@ -37,6 +38,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </head>
 
@@ -54,7 +61,7 @@
           <div class="hamburger">
             <div class="bar"></div>
           </div>
-          <ul>
+          <ul >
             <li><a href="{% url 'book-appointment' %}">Appointment</a></li>
             <li><a href="{% url 'facilities' %}">Facilities</a></li>
             <li><a href="{% url 'gallery' %}">Gallery</a></li>
@@ -105,8 +112,7 @@
           </div>
         </div>
         {% endfor %}
-        <h1>VR Chest and Women Care</h1>
-        <h3>Lorem ipsum dolor sit blanditiis quidem repudiandae doloremque, ratione impedit!</h3>
+        <h1 >VR Chest and Women Care</h1>
         <div class="appoint">
           <div>
             <a href="{% url 'book-appointment' %}">
@@ -209,7 +215,7 @@
           <div class="card-body">
             <h5 class="card-title">Dr. Veni N</h5>
             <h6>MBBD MD DNB FNAMS</h6>
-            <h6>Consultant Gynocologist</h6>
+            <h6>Consultant Gynecologist</h6>
             <center><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#exampleModal2">
                 Know More
@@ -363,15 +369,20 @@
     </div>
     </div>
     </div>
-    <div class="flexcontact2">
-      <div>
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;row-gap:20px;">
+      <div style="flex:1;">
         <a href="">
           <button class="btn btn-primary">View all Google Reviews</button>
         </a>
       </div>
-      <div>
+      <div style="flex:1;">
         <a href="">
-          <button class="btn btn-primary">View all Practo Reviews</button>
+          <button class="btn btn-primary">View all Practo Reviews of Dr. Vasunethra Kasargod</button>
+        </a>
+      </div>
+      <div style="flex:1;">
+        <a href="">
+          <button class="btn btn-primary">View all Practo Reviews of Dr. Veni N</button>
         </a>
       </div>
     </div>
