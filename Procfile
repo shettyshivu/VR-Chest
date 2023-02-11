@@ -1,1 +1,1 @@
-web: gunicorn VR_Chest_Project.wsgi
+
